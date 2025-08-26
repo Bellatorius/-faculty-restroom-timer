@@ -377,6 +377,104 @@ h1 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Signature Collection Section */
+.signature-section {
+    background: linear-gradient(45deg, #e91e63, #c2185b);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    direction: ltr;
+    text-align: center;
+    color: white;
+}
+
+.signature-section h4 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.signature-section p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.petition-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    backdrop-filter: blur(10px);
+}
+
+.sign-petition-btn {
+    background: linear-gradient(45deg, #4caf50, #45a049);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    width: 100%;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.sign-petition-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.signature-counter {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.signature-counter h5 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #ffeb3b;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.signature-counter p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.recent-signatures {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.recent-signatures h5 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #81c784;
+}
+
+.signature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.signature-item {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    border-left: 4px solid #4caf50;
+}
+
 /* Amenities Section - English text */
 .amenities-section {
     flex: 1;
@@ -612,17 +710,42 @@ h1 {
     51%, 100% { opacity: 0.3; }
 }
 
-/* Responsive Design */
+/* Enhanced Mobile Responsiveness */
 @media (max-width: 768px) {
     body {
         padding: 10px;
     }
     
     .container {
-        padding: 25px 20px;
-        margin: 10px;
+        padding: 20px 15px;
+        margin: 5px;
         max-height: 95vh;
-        width: calc(100vw - 20px);
+        width: calc(100vw - 10px);
+    }
+    
+    .timer-container {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .time-unit {
+        width: 100%;
+        max-width: 200px;
+        padding: 20px 15px;
+        margin: 0 auto;
+    }
+    
+    .number {
+        font-size: 3rem;
+    }
+    
+    .label {
+        font-size: 1rem;
+    }
+    
+    .toilet-icon {
+        font-size: 2rem;
     }
     
     .info-section {
@@ -640,48 +763,84 @@ h1 {
         max-width: 300px;
     }
     
-    .time-unit {
-        width: 120px;
-        padding: 20px 15px;
-    }
-    
     h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
     
     .joke-text h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     
     .joke-text p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     
-    .timer-container {
-        gap: 10px;
+    .breaking-alert span {
+        font-size: 0.9rem;
     }
     
-    .toilet-icon {
-        font-size: 1.8rem;
+    .warning-box h3 {
+        font-size: 1.1rem;
+    }
+    
+    .warning-box p {
+        font-size: 0.9rem;
+    }
+    
+    .signature-section h4 {
+        font-size: 1.4rem;
+    }
+    
+    .signature-section p {
+        font-size: 1rem;
+    }
+    
+    .petition-form {
+        padding: 20px 15px;
+    }
+    
+    .sign-petition-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px 10px;
+        margin: 2px;
+        width: calc(100vw - 4px);
+    }
+    
+    .time-unit {
+        padding: 15px 10px;
     }
     
     .number {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
     }
     
     .label {
         font-size: 0.9rem;
     }
     
-    .breaking-alert span {
-        font-size: 1rem;
+    h1 {
+        font-size: 1.8rem;
     }
     
-    .warning-box h3 {
+    .joke-text h2 {
         font-size: 1.2rem;
     }
     
-    .warning-box p {
-        font-size: 0.9rem;
+    .joke-text p {
+        font-size: 1rem;
+    }
+    
+    .signature-section {
+        padding: 20px 15px;
+    }
+    
+    .signature-section h4 {
+        font-size: 1.2rem;
     }
 }

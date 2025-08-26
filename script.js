@@ -33,6 +33,15 @@ const randomKnockMessages = [
     "The door displays: 'Error 403: Insufficient Academic Credentials'"
 ];
 
+// Signature collection
+let signatureCount = 1247;
+let recentSignatures = [
+    "Ahmed Hassan - Just signed!",
+    "Sarah Johnson - This is ridiculous!",
+    "Mohammed Ali - We need change!",
+    "Emily Chen - Equal access for all!"
+];
+
 // Toilet click counter for easter egg
 let toiletClickCount = 0;
 
@@ -166,6 +175,54 @@ function submitForm() {
     } else {
         alert('✅ Application submitted successfully! Your request is being processed by the Faculty Restroom Committee. Please wait 3-5 business years for a response. 📋');
     }
+}
+
+function signPetition() {
+    const signerName = document.getElementById('signer-name').value;
+    const studentId = document.getElementById('student-id').value;
+    
+    if (!signerName.trim()) {
+        alert('Please enter your name to sign the petition!');
+        return;
+    }
+    
+    // Increment signature count
+    signatureCount++;
+    
+    // Add new signature to recent list
+    const newSignature = `${signerName} - Just signed!`;
+    recentSignatures.unshift(newSignature);
+    
+    // Keep only last 4 signatures
+    if (recentSignatures.length > 4) {
+        recentSignatures = recentSignatures.slice(0, 4);
+    }
+    
+    // Update display
+    updateSignatureDisplay();
+    
+    // Clear form
+    document.getElementById('signer-name').value = '';
+    document.getElementById('student-id').value = '';
+    
+    // Show success message
+    alert(`🎉 Thank you ${signerName}! Your signature has been added to the petition!\n\nCurrent total: ${signatureCount.toLocaleString()} signatures\n\nTogether we can solve this crisis! ✊`);
+}
+
+function updateSignatureDisplay() {
+    // Update signature count
+    document.getElementById('signature-count').textContent = signatureCount.toLocaleString();
+    
+    // Update recent signatures list
+    const signatureList = document.getElementById('signature-list');
+    signatureList.innerHTML = '';
+    
+    recentSignatures.forEach(signature => {
+        const signatureItem = document.createElement('div');
+        signatureItem.className = 'signature-item';
+        signatureItem.textContent = signature;
+        signatureList.appendChild(signatureItem);
+    });
 }
 
 function knockOnDoor() {

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Restroom Timer - Exclusive Access Only!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header-section">
+            <!-- Breaking News Alert -->
+            <div class="breaking-alert">
+                <span class="blink">🚨 BREAKING: Unauthorized entry detected! 🚨</span>
+            </div>
+
+            <!-- Main Joke Section -->
+            <div class="joke-text">
+                <h2>🚽 حمامات أعضاء هيئة التدريس… 🚽</h2>
+                <p>ليش ممنوع على أعضاء الثانين يستخدموها؟</p>
+            </div>
+
+            <!-- Sarcastic Warning -->
+            <div class="warning-box">
+                <h3>⚠️ Unauthorized Toilet Usage Detected! ⚠️</h3>
+                <p>Your time in the sacred Faculty Restroom is now being recorded… for science.</p>
+            </div>
+        </div>
+
+        <!-- Timer Section -->
+        <div class="timer-section">
+            <h1>Time Since Unauthorized Use</h1>
+            
+            <div class="timer-container">
+                <div class="time-unit">
+                    <div class="toilet-icon">🚽</div>
+                    <div class="number" id="days">0</div>
+                    <div class="label">Days</div>
+                </div>
+                <div class="time-unit">
+                    <div class="toilet-icon">🚽</div>
+                    <div class="number" id="hours">0</div>
+                    <div class="label">Hours</div>
+                </div>
+                <div class="time-unit">
+                    <div class="toilet-icon">🚽</div>
+                    <div class="number" id="minutes">0</div>
+                    <div class="label">Minutes</div>
+                </div>
+                <div class="time-unit">
+                    <div class="toilet-icon">🚽</div>
+                    <div class="number" id="seconds">0</div>
+                    <div class="label">Seconds</div>
+                </div>
+            </div>
+
+            <!-- Total Seconds Display -->
+            <div class="total-seconds">
+                <span>Total Seconds of Student Suffering: </span>
+                <span id="total-seconds">0</span>
+            </div>
+        </div>
+
+        <!-- Progress Section -->
+        <div class="progress-section">
+            <h4>How long until faculty notice?</h4>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <p class="progress-text">Faculty attention level: <span id="attention-level">Minimal</span></p>
+        </div>
+
+        <!-- Interactive Section -->
+        <div class="interactive-section">
+            <!-- Interactive Buttons -->
+            <div class="button-section">
+                <button class="action-btn request-btn" onclick="requestAccess()">🚪 Request Access</button>
+                <button class="action-btn knock-btn" onclick="knockOnDoor()">🚪 Knock on Door</button>
+            </div>
+
+            <!-- Mock Bureaucracy Form -->
+            <div class="bureaucracy-form">
+                <h4>📋 Official Access Request Form</h4>
+                <div class="form-row">
+                    <label>Faculty ID:</label>
+                    <input type="text" placeholder="Enter your superior credentials" id="faculty-id">
+                </div>
+                <div class="form-row">
+                    <label>Tenure Status:</label>
+                    <select id="tenure-status">
+                        <option value="">Select your academic superiority</option>
+                        <option value="tenured">Tenured (Full Professor)</option>
+                        <option value="tenure-track">Tenure-Track (Associate Professor)</option>
+                        <option value="adjunct">Adjunct (Visiting Professor)</option>
+                        <option value="student">Student (Undergraduate)</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label>Secret Handshake:</label>
+                    <button class="handshake-btn" onclick="showHandshake()">🤝 Demonstrate Secret Handshake</button>
+                </div>
+                <div class="form-row">
+                    <button class="submit-btn" onclick="submitForm()">Submit Application</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Information Section -->
+        <div class="info-section">
+            <!-- Exclusive Amenities -->
+            <div class="amenities-section">
+                <h4>🌟 Exclusive Amenities</h4>
+                <div class="amenity-item">
+                    <span class="amenity-icon">🧻</span>
+                    <span class="amenity-text">Golden Toilet Paper ✅</span>
+                </div>
+                <div class="amenity-item">
+                    <span class="amenity-icon">🧊</span>
+                    <span class="amenity-text">Mini-Fridge with Only Organic Water ✅</span>
+                </div>
+                <div class="amenity-item">
+                    <span class="amenity-icon">📚</span>
+                    <span class="amenity-text">Tiny Bookshelf with Quantum Mechanics Literature ✅</span>
+                </div>
+            </div>
+
+            <!-- Leaderboard -->
+            <div class="leaderboard">
+                <h4>🏆 Top Unauthorized Users</h4>
+                <div class="leaderboard-item">
+                    <span class="rank">1st</span>
+                    <span class="name">Anonymous Student</span>
+                    <span class="time">35 days, 12 hours</span>
+                </div>
+                <div class="leaderboard-item">
+                    <span class="rank">2nd</span>
+                    <span class="name">Bathroom Bandit</span>
+                    <span class="time">23 days, 8 hours</span>
+                </div>
+                <div class="leaderboard-item">
+                    <span class="rank">3rd</span>
+                    <span class="name">Toilet Tourist</span>
+                    <span class="time">15 days, 3 hours</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer-section">
+            <div class="toilet-footer">
+                <p>🚽 Faculty members' restrooms - Exclusive Access Only! 🚽</p>
+                <div class="exclusive-lights">
+                    <span class="light blink">🔴</span>
+                    <span class="light blink">🟡</span>
+                    <span class="light blink">🟢</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Access Denied -->
+    <div id="accessModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>🚫 Access Denied!</h3>
+            <p>Sorry, access denied. Please provide your Faculty ID, proof of superior intellect, and the secret handshake.</p>
+            <p><strong>Additional requirements:</strong></p>
+            <ul>
+                <li>Proof that you've published in Nature or Science</li>
+                <li>At least 3 PhD students under your supervision</li>
+                <li>The ability to explain quantum mechanics to a cat</li>
+            </ul>
+            <button onclick="closeModal()">😔 Accept My Fate</button>
+        </div>
+    </div>
+
+    <!-- Modal for Handshake -->
+    <div id="handshakeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>🤝 Secret Handshake Demonstration</h3>
+            <div class="handshake-animation">🤝 → 🤜🤛 → ✋ → 🤙 → 🫂</div>
+            <p>This is the sacred handshake that only faculty members know. Students attempting to replicate this will be immediately detected and repelled.</p>
+            <button onclick="closeHandshakeModal()">I'm Not Worthy</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
